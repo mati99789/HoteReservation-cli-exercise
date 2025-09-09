@@ -1,32 +1,35 @@
 package repo.customer;
 
 import model.Customer;
+import validation.exceptions.ValidationException;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class InMemoryCustomerRepository implements CustomerRepository {
     private final Map<String, Customer> customers = new HashMap<>();
 
     @Override
     public List<Customer> findAll() {
-        return List.of();
+		return new ArrayList<>(customers.values());
     }
 
     @Override
     public Optional<Customer> findByEmail(String email) {
-        return Optional.empty();
+		return Optional.ofNullable(customers.get(email));
     }
 
     @Override
     public Customer save(Customer customer) {
-        return null;
+        if(customers.containsKey(customer.getEmail())) {
+			throw new ValidationException("Customer with email " + customer.getEmail() + " exist");
+        }
+
+		customers.put(customer.getEmail(), customer);
+		return customer;
     }
 
     @Override
-    public void delete(String email) {
-
+    public void deleteByEmail(String email) {
+		customers.remove(email);
     }
 }

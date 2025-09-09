@@ -2,21 +2,25 @@ package model;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.UUID;
 
 public class Reservation {
+	private final UUID uuid;
     private final Customer customer;
-    private final IRoom room;
+    private final Room room;
     private final LocalDate checkInDate;
     private final LocalDate checkOutDate;
 
-    public Reservation(Customer customer, IRoom room, LocalDate checkInDate, LocalDate checkOutDate) {
-        this.customer = customer;
-        this.room = room;
-        this.checkInDate = checkInDate;
-        this.checkOutDate = checkOutDate;
-    }
 
-    @Override
+	public Reservation(UUID uuid, Customer customer, Room room, LocalDate checkInDate, LocalDate checkOutDate) {
+		this.uuid = uuid;
+		this.customer = customer;
+		this.room = room;
+		this.checkInDate = checkInDate;
+		this.checkOutDate = checkOutDate;
+	}
+
+	@Override
     public String toString() {
         return "Reservation{" +
                 "customer=" + customer +
@@ -26,11 +30,15 @@ public class Reservation {
                 '}';
     }
 
-    public Customer getCustomer() {
+	public UUID getUuid() {
+		return uuid;
+	}
+
+	public Customer getCustomer() {
         return customer;
     }
 
-    public IRoom getRoom() {
+    public Room getRoom() {
         return room;
     }
 

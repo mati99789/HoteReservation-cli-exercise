@@ -9,5 +9,5 @@ public interface CustomerRepository {
     List<Customer> findAll();
     Optional<Customer> findByEmail(String email);
     Customer save(Customer customer);
-    void delete(String email);
+    void deleteByEmail(String email);
 }

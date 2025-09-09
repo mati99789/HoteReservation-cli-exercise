@@ -9,5 +9,5 @@ public interface RoomRepository {
     List<Room> findAll();
     Optional<Room> findByRoomNumber(String roomNumber);
     Room save(Room room);
-    void delete(String roomNumber);
+    void deleteByNumber(String roomNumber);
 }
