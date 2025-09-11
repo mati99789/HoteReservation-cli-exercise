@@ -20,6 +20,10 @@ public class Reservation {
 		this.checkOutDate = checkOutDate;
 	}
 
+    public Reservation(Customer customer, Room room, LocalDate checkInDate, LocalDate checkOutDate) {
+        this(null, customer, room, checkInDate, checkOutDate);
+    }
+
 	@Override
     public String toString() {
         return "Reservation{" +
