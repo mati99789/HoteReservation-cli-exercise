@@ -1,6 +1,4 @@
-package repo.room;
-
-import model.Room;
+package room.domain;
 
 import java.util.List;
 import java.util.Optional;

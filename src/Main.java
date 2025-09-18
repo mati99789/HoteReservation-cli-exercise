@@ -1,6 +1,15 @@
+import interfaces.bootstrap.AppContext;
+import interfaces.cli.ReservationResource;
+import interfaces.cli.MainMenu;
+
 import java.util.Scanner;
 
 public class Main {
+
+    private static AppContext appContext = new AppContext();
+    private static ReservationResource reservationResource = appContext.getReservationResource();
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -17,18 +26,13 @@ public class Main {
             int choice = Integer.parseInt(userInput);
 
             switch (choice) {
-                case 1:
-                    System.out.println("Main");
-                    break;
-                case 2:
+                case 1 -> new MainMenu(reservationResource).run(scanner);
+                case 2 ->
                     System.out.println("Admin");
-                    break;
-                case 3:
+                case 3 ->
                     System.out.println("Exiting...");
-                    return;
-                default:
+                default ->
                     System.out.println("Invalid choice.");
-                    continue;
             }
         }
     }

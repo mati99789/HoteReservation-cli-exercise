@@ -1,4 +1,4 @@
-package model;
+package customer.domain;
 
 import validation.EmailValidator;
 

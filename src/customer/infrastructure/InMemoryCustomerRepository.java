@@ -1,6 +1,7 @@
-package repo.customer;
+package customer.infrastructure;
 
-import model.Customer;
+import customer.domain.Customer;
+import customer.domain.CustomerRepository;
 import validation.exceptions.ValidationException;
 
 import java.util.*;

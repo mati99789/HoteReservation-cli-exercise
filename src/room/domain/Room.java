@@ -1,4 +1,4 @@
-package model;
+package room.domain;
 
 
 public class Room  {

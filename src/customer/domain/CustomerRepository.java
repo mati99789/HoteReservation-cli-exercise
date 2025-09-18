@@ -1,6 +1,4 @@
-package repo.customer;
-
-import model.Customer;
+package customer.domain;
 
 import java.util.List;
 import java.util.Optional;

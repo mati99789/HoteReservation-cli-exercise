@@ -1,4 +1,4 @@
-package model;
+package room.domain;
 
 public enum RoomType {
     SINGLE,

@@ -1,6 +1,7 @@
-package repo.room;
+package room.infrastructure;
 
-import model.Room;
+import room.domain.Room;
+import room.domain.RoomRepository;
 
 import java.util.*;
 
