@@ -2,7 +2,7 @@ package interfaces.cli;
 
 import common.Result;
 import reeservation.domain.Reservation;
-import reeservation.domain.dto.FreeRoom;
+import reeservation.application.dto.FreeRoom;
 
 import java.util.List;
 import java.util.Scanner;

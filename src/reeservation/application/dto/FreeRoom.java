@@ -1,4 +1,4 @@
-package reeservation.domain.dto;
+package reeservation.application.dto;
 
 import room.domain.RoomType;
 

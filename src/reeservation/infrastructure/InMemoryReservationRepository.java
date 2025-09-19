@@ -22,7 +22,7 @@ public class InMemoryReservationRepository implements ReservationRepository {
 					reservation.getReservationDates()
 			);
 			reservations.put(newId, newReservation);
-			return reservation;
+			return newReservation;
 		}
 
 		reservations.put(reservation.getUuid(), reservation);

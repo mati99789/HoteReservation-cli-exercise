@@ -1,6 +1,8 @@
 package room.domain;
 
 
+import java.util.Objects;
+
 public class Room  {
     private final String roomNumber;
     private final Double price;
@@ -31,5 +33,17 @@ public class Room  {
 
     public RoomType getRoomType() {
         return roomType;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Room room = (Room) o;
+        return Objects.equals(roomNumber, room.roomNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(roomNumber);
     }
 }

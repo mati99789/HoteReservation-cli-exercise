@@ -30,7 +30,8 @@ public class ReservationDates {
         return checkOut;
     }
 
-    public boolean overlaps(ReservationDates dates) {
-        return this.checkIn.isBefore(dates.checkIn) && this.checkOut.isAfter(dates.checkIn);
+    public boolean overlaps(ReservationDates other) {
+        return !this.checkOut.isBefore(other.getCheckIn()) &&
+                !this.checkIn.isAfter(other.getCheckOut());
     }
 }

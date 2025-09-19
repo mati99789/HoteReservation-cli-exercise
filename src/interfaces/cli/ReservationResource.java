@@ -1,7 +1,7 @@
 package interfaces.cli;
 
 import common.Result;
-import reeservation.domain.dto.FreeRoom;
+import reeservation.application.dto.FreeRoom;
 import reeservation.domain.Reservation;
 import reeservation.application.ReservationUseCase;
 import validation.exceptions.NotFoundException;
@@ -17,7 +17,6 @@ public class ReservationResource {
     public ReservationResource(ReservationUseCase reservationUseCase) {
         this.reservationUseCase = reservationUseCase;
     }
-
 
     public Result<List<FreeRoom>> findFreeRooms(String checkInDate, String checkOutDate) {
         if(checkInDate == null || checkOutDate == null) {

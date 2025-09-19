@@ -1,6 +1,6 @@
 package reeservation.application;
 
-import reeservation.domain.dto.FreeRoom;
+import reeservation.application.dto.FreeRoom;
 import reeservation.domain.Reservation;
 
 import java.time.LocalDate;

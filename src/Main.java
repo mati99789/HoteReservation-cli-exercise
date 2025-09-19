@@ -1,4 +1,6 @@
 import interfaces.bootstrap.AppContext;
+import interfaces.cli.AdminMenu;
+import interfaces.cli.AdminResource;
 import interfaces.cli.ReservationResource;
 import interfaces.cli.MainMenu;
 
@@ -8,7 +10,7 @@ public class Main {
 
     private static AppContext appContext = new AppContext();
     private static ReservationResource reservationResource = appContext.getReservationResource();
-
+    private static AdminResource adminResources = appContext.getAdminResource();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -28,9 +30,11 @@ public class Main {
             switch (choice) {
                 case 1 -> new MainMenu(reservationResource).run(scanner);
                 case 2 ->
-                    System.out.println("Admin");
+                    System.out.println("See all reservations");
                 case 3 ->
-                    System.out.println("Exiting...");
+                        System.out.println("Create Account");
+                case 4 ->
+                    new AdminMenu(adminResources).run(scanner);
                 default ->
                     System.out.println("Invalid choice.");
             }
