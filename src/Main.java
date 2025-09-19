@@ -39,10 +39,13 @@ public class Main {
 
     private static void displayMenu() {
         String greeting = """
-                ==Hotel==
-                1) Main
-                2) Admin
+                ---------------------------------------
+                1) Find and reserve a room
+                2) See my reservations
+                3) Create an Account
+                4) Admin
                 3) Exit
+                ---------------------------------------
                 """;
         System.out.println(greeting);
         System.out.print("Choose an option: ");
